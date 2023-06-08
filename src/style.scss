@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+/* color principal : couleur principale : #022873 / blue : #2e60b9 / cyan : #61aec0 / Jaune : #ffc652/ Rouge : #d8665b */
+
+
+$fontStyle: 'Poppins', sans-serif;
+$backgroundColor: #022873 ;
+$backgroundStarColor: #2e60b9;
+$fontColor: #f7f7f7;
+$starColor: #ffc652;
+
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+
+
+#root {
+    margin: 0 auto;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 65vw;
+    height: 55vh;
+    background-color: $backgroundColor;
+    border-radius: 20px;
+    border: #2e60b9 solid 0.5em;
+    .Card{
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+
+    .Presentation{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-height: 25%;
+        margin-bottom: 2em;
+          h1{
+            font-family: $fontStyle;
+            font-weight: 600;
+            font-size: 3.8em;
+            color: $fontColor;
+            margin: 0.5em 0 0.5em 0;
+          }
+          h3{
+            color: $fontColor;
+            font-family: $fontStyle;
+            font-size: 1.5em;
+          }
+          p{
+            font-family: $fontStyle;
+            font-size: 1.4em;
+            color: $fontColor;
+          }
+        
+      } 
+
+        img{
+            display: flex;
+            justify-content: center;
+            height: 35vh;
+            margin-bottom: 2em;
+            transition: 300ms ease-in-out;
+      }
+      img:hover{
+        transform: scale(1.05);
+  }
+}
+    
+
+
+
+  .rating{
+    width: 45 vw;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    background-color: $fontColor;
+    border-radius: 30px;
+    padding: 1em;
+
+    p{
+        font-family: $fontStyle;
+        font-size: 1.5em;
+        color: $backgroundStarColor;
+        margin-right: 0.5em;
+      }
+    
+  }
+ 
+  .rating:not(:checked) > input {
+    position: absolute;
+    appearance: none;
+  }
+  
+  .rating:not(:checked) > label {
+    float: right;
+    cursor: pointer;
+    font-size: 50px;
+    color: $backgroundStarColor;
+  }
+  
+  .rating:not(:checked) > label:before {
+    content: '★';
+  }
+  
+  .rating > input:checked + label:hover,
+  .rating > input:checked + label:hover ~ label,
+  .rating > input:checked ~ label:hover,
+  .rating > input:checked ~ label:hover ~ label,
+  .rating > label:hover ~ input:checked ~ label {
+    color: $starColor;
+  }
+  
+  .rating:not(:checked) > label:hover,
+  .rating:not(:checked) > label:hover ~ label {
+    color: $starColor;
+  }
+  
+  .rating > input:checked ~ label {
+    color: $starColor;
+  }
+}
+}
